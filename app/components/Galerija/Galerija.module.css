@@ -1,0 +1,46 @@
+.section {
+  padding: clamp(4rem, 10vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+  background-color: #fff;
+}
+
+.heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #2c2724;
+  text-align: center;
+  margin: 0 0 clamp(2rem, 5vw, 3.5rem);
+}
+
+.grid {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+@media (min-width: 36rem) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 56rem) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: #f0ede8;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
