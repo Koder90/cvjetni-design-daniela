@@ -6,7 +6,7 @@ export default function Hero() {
       <div className={styles.bgWrap}>
         <img
           className={styles.bgImage}
-          src="/images/pexels-coralbellestudios-712651.jpg"
+          src="/images/buketi/hero.jpg"
           alt=""
           width={1920}
           height={1280}

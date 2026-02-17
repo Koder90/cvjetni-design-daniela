@@ -10,11 +10,11 @@ html {
 
 body {
   margin: 0;
-  font-family: "Cormorant Garamond", "Georgia", serif;
-  font-size: clamp(1rem, 2vw, 1.125rem);
-  line-height: 1.6;
+  font-family: "Lora", "Georgia", serif;
+  font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+  line-height: 1.65;
   color: #3d3632;
-  background-color: #faf8f5;
+  background-color: #fcfaf6;
   -webkit-font-smoothing: antialiased;
 }
 

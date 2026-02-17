@@ -4,38 +4,79 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1rem clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.5rem, 5vw, 4rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(250, 248, 245, 0.92);
-  backdrop-filter: blur(8px);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: rgba(252, 250, 246, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .scrolled {
-  border-bottom-color: rgba(212, 207, 199, 0.5);
-  box-shadow: 0 1px 0 rgba(250, 248, 245, 0.5);
+  border-bottom-color: rgba(200, 190, 178, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-.name {
-  font-size: clamp(1rem, 2vw, 1.15rem);
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
   font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #2a2522;
+}
+
+.logo:hover {
+  color: #5c4a3d;
+}
+
+.nav {
+  display: block;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  justify-content: flex-end;
+}
+
+.navLink {
+  font-family: "Lora", serif;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-weight: 500;
   letter-spacing: 0.02em;
-  color: #2c2724;
+  color: #3d3632;
+  padding: 0.35rem 0.25rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #6b5b4f;
+  border-bottom-color: currentColor;
 }
 
 .cta {
-  font-size: clamp(0.9rem, 1.8vw, 1rem);
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  color: #8b7355;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid currentColor;
-  transition: color 0.2s ease;
+  font-family: "Lora", serif;
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: #8f7a62;
+  padding: 0.6rem 1.4rem;
+  transition: background 0.25s ease, transform 0.2s ease;
 }
 
 .cta:hover {
-  color: #7a6449;
+  background: #7d6b56;
+  transform: translateY(-1px);
 }

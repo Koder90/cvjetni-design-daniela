@@ -18,7 +18,7 @@ export default function About() {
         <picture>
           <div className={styles.imageWrap}>
             <img
-              src="/images/pexels-esra-salturk-1165434438-27140162.jpg"
+              src="/images/buketi/631899390_899957416267595_6219524520462922183_n.jpg"
               alt="Cvjetni aranžman"
               width={800}
               height={600}

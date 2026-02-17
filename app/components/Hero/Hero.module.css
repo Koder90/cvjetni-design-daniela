@@ -7,7 +7,7 @@
   align-items: center;
   text-align: center;
   position: relative;
-  padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2.5rem, 8vw, 5rem) clamp(1.5rem, 5vw, 4rem);
   overflow: hidden;
 }
 
@@ -20,6 +20,8 @@
 .bgImage {
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -29,9 +31,9 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(250, 248, 245, 0.75) 0%,
-    rgba(250, 248, 245, 0.5) 50%,
-    rgba(250, 248, 245, 0.85) 100%
+    rgba(42, 37, 34, 0.35) 0%,
+    rgba(42, 37, 34, 0.2) 40%,
+    rgba(252, 250, 246, 0.82) 100%
   );
   z-index: 1;
 }
@@ -39,42 +41,45 @@
 .content {
   position: relative;
   z-index: 2;
-  max-width: 42rem;
+  max-width: 44rem;
 }
 
 .title {
-  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.75rem, 8vw, 4.5rem);
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #2c2724;
-  margin: 0 0 0.5em;
-  line-height: 1.15;
+  color: #1f1c1a;
+  margin: 0 0 0.4em;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .subtitle {
-  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-  font-weight: 400;
-  color: #5c534d;
-  margin: 0 0 2rem;
-  letter-spacing: 0.01em;
+  font-family: "Lora", serif;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 500;
+  color: #2a2522;
+  margin: 0 0 2.25rem;
+  letter-spacing: 0.02em;
 }
 
 .cta {
   display: inline-block;
-  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.75rem, 4vw, 2.25rem);
-  font-size: clamp(1rem, 2vw, 1.1rem);
-  font-weight: 500;
+  font-family: "Lora", serif;
+  padding: clamp(0.9rem, 2vw, 1.1rem) clamp(2rem, 5vw, 2.75rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 600;
   letter-spacing: 0.04em;
-  color: #faf8f5;
-  background-color: #8b7355;
+  color: #fcfaf6;
+  background-color: #8f7a62;
   border: none;
-  border-radius: 0;
   transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .cta:hover {
-  background-color: #7a6449;
-  transform: translateY(-1px);
+  background-color: #7d6b56;
+  transform: translateY(-2px);
 }
 
 .cta:active {

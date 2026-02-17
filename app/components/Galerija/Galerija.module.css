@@ -1,46 +1,95 @@
 .section {
-  padding: clamp(4rem, 10vw, 7rem) clamp(1.5rem, 5vw, 4rem);
-  background-color: #fff;
+  padding: clamp(5rem, 12vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  background: linear-gradient(180deg, #fff 0%, #faf7f2 50%, #fff 100%);
 }
 
-.heading {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+.mainHeading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #2c2724;
+  color: #2a2522;
   text-align: center;
-  margin: 0 0 clamp(2rem, 5vw, 3.5rem);
+  margin: 0 0 clamp(2.5rem, 6vw, 4rem);
+}
+
+.categories {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 7vw, 5rem);
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.categoryTitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #3d3632;
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(143, 122, 98, 0.25);
 }
 
 .grid {
-  max-width: 72rem;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: clamp(0.75rem, 2vw, 1.25rem);
+  grid-auto-rows: minmax(12rem, 1fr);
+  gap: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 @media (min-width: 36rem) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(14rem, 1fr);
   }
 }
 
 @media (min-width: 56rem) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(11rem, 1fr);
   }
 }
 
 .item {
-  aspect-ratio: 1;
   overflow: hidden;
-  background-color: #f0ede8;
+  min-height: 10rem;
+  background-color: #f0ebe3;
+  display: block;
+  position: relative;
 }
 
 .item img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
+}
+
+.spanCol {
+  grid-column: span 2;
+}
+
+.spanRow {
+  grid-row: span 2;
+}
+
+@media (min-width: 56rem) {
+  .spanCol {
+    grid-column: span 2;
+  }
+
+  .spanRow {
+    grid-row: span 2;
+  }
 }

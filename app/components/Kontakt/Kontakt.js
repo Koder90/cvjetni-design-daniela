@@ -14,51 +14,56 @@ export default function Kontakt() {
         <p className={styles.subheading}>
           Pošaljite upit — posebno vas pozivamo na upite za vjenčanja.
         </p>
-        <form className={styles.form} onSubmit={handleSubmit} noValidate>
-          <div>
-            <label className={styles.label} htmlFor="name">
-              Ime i prezime
-            </label>
-            <input
-              className={styles.input}
-              id="name"
-              name="name"
-              type="text"
-              required
-              autoComplete="name"
-            />
-          </div>
-          <div>
-            <label className={styles.label} htmlFor="email">
-              Email
-            </label>
-            <input
-              className={styles.input}
-              id="email"
-              name="email"
-              type="email"
-              required
-              autoComplete="email"
-            />
-          </div>
-          <div>
-            <label className={styles.label} htmlFor="message">
-              Poruka
-            </label>
-            <textarea
-              className={styles.textarea}
-              id="message"
-              name="message"
-              required
-              rows={5}
-            />
-          </div>
-          <button type="submit" className={styles.submit}>
-            Pošalji upit
-          </button>
-        </form>
-        <div className={styles.contactInfo}>
-          <p>
+        <div className={styles.card}>
+          <form className={styles.form} onSubmit={handleSubmit} noValidate>
+            <div className={styles.field}>
+              <label className={styles.label} htmlFor="name">
+                Ime i prezime
+              </label>
+              <input
+                className={styles.input}
+                id="name"
+                name="name"
+                type="text"
+                required
+                autoComplete="name"
+                placeholder=" "
+              />
+            </div>
+            <div className={styles.field}>
+              <label className={styles.label} htmlFor="email">
+                Email
+              </label>
+              <input
+                className={styles.input}
+                id="email"
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder=" "
+              />
+            </div>
+            <div className={styles.field}>
+              <label className={styles.label} htmlFor="message">
+                Poruka
+              </label>
+              <textarea
+                className={styles.textarea}
+                id="message"
+                name="message"
+                required
+                rows={5}
+                placeholder=" "
+              />
+            </div>
+            <button type="submit" className={styles.submit}>
+              Pošalji upit
+            </button>
+          </form>
+        </div>
+        <div className={styles.contactCard}>
+          <p className={styles.contactName}>
             <strong>Cvjetni design Daniela</strong>
           </p>
           <p>Split i okolica</p>
