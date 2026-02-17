@@ -3,13 +3,12 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
-  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.5rem, 5vw, 4rem);
+  z-index: 200;
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.25rem, 5vw, 4rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  min-height: 3.5rem;
   background: rgba(252, 250, 246, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -24,10 +23,11 @@
 
 .logo {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.35rem);
   font-weight: 600;
   letter-spacing: 0.03em;
   color: #2a2522;
+  padding: 0.5rem 0;
 }
 
 .logo:hover {
@@ -35,7 +35,145 @@
 }
 
 .nav {
+  display: none;
+}
+
+.burger {
+  position: relative;
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  border: none;
+  background: transparent;
+  color: #2a2522;
+  transition: color 0.2s ease;
+}
+
+.burger:hover {
+  color: #5c4a3d;
+}
+
+.burgerLine {
   display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.burgerOpen .burgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burgerOpen .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerOpen .burgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ----- Mobile: classic overlay menu (no drawer, no scroll) ----- */
+.mobileOverlayWrap {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.mobileOverlayWrapOpen {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
+.mobileBackdrop {
+  position: absolute;
+  inset: 0;
+  background-color: #f5f0e8;
+  background: #f5f0e8;
+  opacity: 1;
+}
+
+.mobileMenuBox {
+  position: absolute;
+  right: 1rem;
+  top: 4rem;
+  left: auto;
+  width: auto;
+  max-width: 12rem;
+  padding: 1rem 1rem 1rem;
+  overflow: hidden;
+  background-color: #f5f0e8;
+  background: #f5f0e8;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.mobileNavLink {
+  display: block;
+  font-family: "Lora", serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1f1c1a;
+  padding: 0.5rem 0.75rem;
+  text-align: right;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mobileNavLink:hover {
+  color: #2a2522;
+  background: rgba(143, 122, 98, 0.1);
+}
+
+.mobileCta {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: "Lora", serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: #8f7a62;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.mobileCta:hover {
+  background: #7d6b56;
+}
+
+@media (min-width: 52rem) {
+  .nav {
+    display: block;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .mobileOverlayWrap {
+    display: none;
+  }
 }
 
 .navList {
@@ -44,18 +182,16 @@
   padding: 0;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(0.75rem, 2vw, 1.5rem);
-  justify-content: flex-end;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .navLink {
   font-family: "Lora", serif;
-  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   font-weight: 500;
   letter-spacing: 0.02em;
   color: #3d3632;
-  padding: 0.35rem 0.25rem;
+  padding: 0.5rem 0.25rem;
   border-bottom: 1px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
 }

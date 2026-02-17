@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   font-family: "Lora", "Georgia", serif;
-  font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+  font-size: clamp(1.1rem, 2vw, 1.1875rem);
   line-height: 1.65;
   color: #3d3632;
   background-color: #fcfaf6;

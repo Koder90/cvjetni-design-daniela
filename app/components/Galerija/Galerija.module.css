@@ -1,11 +1,11 @@
 .section {
-  padding: clamp(5rem, 12vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  padding: clamp(4rem, 12vw, 8rem) clamp(1.25rem, 5vw, 4rem);
   background: linear-gradient(180deg, #fff 0%, #faf7f2 50%, #fff 100%);
 }
 
 .mainHeading {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-size: clamp(2.25rem, 4.5vw, 2.75rem);
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #2a2522;
@@ -38,33 +38,36 @@
   border-bottom: 1px solid rgba(143, 122, 98, 0.25);
 }
 
+/* Mobile: horizontal scroll per category */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(12rem, 1fr);
-  gap: clamp(0.5rem, 1.5vw, 1rem);
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 1rem;
+  padding: 0.25rem 0;
+  margin: 0 -1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
-@media (min-width: 36rem) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(14rem, 1fr);
-  }
-}
-
-@media (min-width: 56rem) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(11rem, 1fr);
-  }
+.grid::-webkit-scrollbar {
+  display: none;
 }
 
 .item {
+  flex: 0 0 72vw;
+  width: 72vw;
+  max-width: 22rem;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   overflow: hidden;
-  min-height: 10rem;
+  min-height: 14rem;
   background-color: #f0ebe3;
-  display: block;
   position: relative;
+  border-radius: 0;
 }
 
 .item img {
@@ -76,20 +79,51 @@
   object-position: center;
 }
 
-.spanCol {
-  grid-column: span 2;
-}
-
+.spanCol,
 .spanRow {
-  grid-row: span 2;
+  /* no span on mobile */
 }
 
+@media (min-width: 36rem) {
+  .item {
+    flex: 0 0 52vw;
+    width: 52vw;
+    max-width: 20rem;
+    min-height: 16rem;
+  }
+}
+
+/* Desktop: grid layout */
 @media (min-width: 56rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(11rem, 1fr);
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: none;
+  }
+
+  .item {
+    flex: none;
+    width: auto;
+    max-width: none;
+    min-height: 10rem;
+  }
+
   .spanCol {
     grid-column: span 2;
   }
 
   .spanRow {
     grid-row: span 2;
+  }
+}
+
+@media (min-width: 72rem) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

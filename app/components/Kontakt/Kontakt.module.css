@@ -1,5 +1,5 @@
 .section {
-  padding: clamp(5rem, 12vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  padding: clamp(4.5rem, 12vw, 8rem) clamp(1.5rem, 5vw, 4rem);
   background: linear-gradient(180deg, #f5f0e9 0%, #faf7f2 100%);
 }
 
@@ -10,7 +10,7 @@
 
 .heading {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-size: clamp(2.1rem, 4.5vw, 2.75rem);
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #2a2522;
@@ -20,7 +20,7 @@
 
 .subheading {
   font-family: "Lora", serif;
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-size: clamp(1.1rem, 2vw, 1.2rem);
   color: #5c534d;
   text-align: center;
   margin: 0 0 clamp(2.5rem, 6vw, 3.5rem);
@@ -51,7 +51,7 @@
 .label {
   display: block;
   font-family: "Lora", serif;
-  font-size: 0.95rem;
+  font-size: clamp(1rem, 1.5vw, 0.95rem);
   font-weight: 500;
   color: #3d3632;
   margin-bottom: 0.5rem;
@@ -60,7 +60,8 @@
 .input,
 .textarea {
   width: 100%;
-  padding: 0.9rem 1.15rem;
+  padding: clamp(0.9rem, 2vw, 0.9rem) 1.15rem;
+  font-size: clamp(1.05rem, 2vw, 1rem);
   border: 1px solid #d4cfc7;
   background: #fcfaf6;
   color: #2a2522;
@@ -89,13 +90,17 @@
 .submit {
   align-self: flex-start;
   font-family: "Lora", serif;
-  padding: 0.9rem 2.25rem;
-  font-size: 1.05rem;
+  padding: clamp(1rem, 2vw, 0.9rem) 2.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.05rem);
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #fcfaf6;
   background-color: #8f7a62;
   border: none;
+  min-height: 3.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 0.25rem 0.75rem rgba(143, 122, 98, 0.25);
   transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
   margin-top: 0.25rem;
@@ -129,7 +134,7 @@
   margin: 0.4rem 0;
   font-family: "Lora", serif;
   color: #5c534d;
-  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.1rem);
 }
 
 .contactName {
@@ -142,7 +147,7 @@
 
 .contactNote {
   margin-top: 1.25rem;
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.5vw, 1rem);
   color: #6b625a;
   font-style: italic;
 }
